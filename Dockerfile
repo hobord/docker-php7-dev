@@ -33,12 +33,13 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y \
     && a2enmod php7.0 \
     && a2enmod rewrite \
     && sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.0/apache2/php.ini \
-    && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
-    && php7 composer-setup.php && mv composer.phar /usr/local/bin/composer && rm composer-setup.php \
-    && /usr/local/bin/composer self-update \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
+
+RUN php7 -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php7 composer-setup.php && mv composer.phar /usr/local/bin/composer && rm composer-setup.php
+RUN /usr/local/bin/composer self-update
 
 #ENV APACHE_RUN_USER www-data
 #ENV APACHE_RUN_GROUP www-data
