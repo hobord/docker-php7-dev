@@ -37,8 +37,9 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
+RUN  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 2>/dev/null 1>/dev/null
 #RUN php -r "copy('http://getcomposer.org/installer', 'composer-setup.php');" 
-#RUN php composer-setup.php && mv composer.phar /usr/local/bin/composer && rm composer-setup.php \
+#RUN php composer-setup.php && mv composer.phar /usr/local/bin/composer && rm composer-setup.php
 #RUN /usr/local/bin/composer self-update
 
 #ENV APACHE_RUN_USER www-data
