@@ -30,6 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y \
     php-sqlite3 \
     php-xdebug \
     php-zip \
+    vim \
     && a2enmod php7.0 \
     && a2enmod rewrite \
     && sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.0/apache2/php.ini \
