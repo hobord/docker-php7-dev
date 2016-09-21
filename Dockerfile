@@ -33,6 +33,7 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y \
     && a2enmod php7.0 \
     && a2enmod rewrite \
     && sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.0/apache2/php.ini \
+    && sed -i "s/zend_extension/;zend_extension/" /etc/php/7.0/cli/conf.d/20-xdebug.ini \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
