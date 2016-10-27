@@ -7,6 +7,8 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y \
     git \
     libapache2-mod-php \
     mcrypt \
+    freetds-common \
+    libsybdb5 \
     php \
     php-bz2 \
     php-cli \
@@ -27,6 +29,7 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y \
     php-mysql \
     php-uuid \
     php-redis \
+    php-sybase \
     php-sqlite3 \
     php-xdebug \
     php-zip \
