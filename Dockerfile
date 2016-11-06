@@ -18,6 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get install -y \
     php-dom \
     php-gd \
     php-intl \
+    php-imap \
     php-json \
     php-ldap \
     php-odbc \
