@@ -63,7 +63,7 @@ RUN usermod -u 1000 www-data \
     && chown -R www-data:www-data /var/www 
 
 EXPOSE 80
-
+ENTRYPOINT ["bash"]
 VOLUME ["/var/www", "/var/www/public"]
 
 CMD ["/run.sh"]
